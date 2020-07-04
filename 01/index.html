@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>迅雷</title>
+    <style type="text/css">
+		*{
+			padding: 0;
+		    box-sizing: border-box;
+		}
+		li{
+		    list-style: none;
+		}
+		a{
+		    text-decoration: none;
+		}
+		header{
+		    height: 431px;
+		    background: url(https://www.xunlei.com/v2018/dist/about-bg.jpg?h=c17209) no-repeat center
+		}
+		
+		.header{
+		    width: 1200px;
+		    height: 64px;
+			margin: 0 auto;
+		    color: white;
+		    font-size: 14px;
+		}
+		.header>li{
+		    float: right;
+		    margin-left: 20px;
+		    height: 84px;
+		    line-height: 64px;
+		    text-align: center;
+		    padding: 0 10px;
+		}
+		.header>.icon{
+		    float: left;
+		    margin-left: 0;
+		    height: 37px;
+		}
+		img{
+		    margin-top: 15px;
+		    width: 78px;
+		    height: 37px;
+		}
+		header>h1{
+		    margin-top: 90px;
+		    text-align: center;
+		    color: white;
+		    font-weight: 400;
+		    font-size: 50px;
+		}
+		.change:hover{
+		    background-color: rgba(0, 0, 0, 0.75);
+		    transition: all 0.3s;
+		}
+		.header-prv{
+		    position: relative;
+		}
+		.header-prv::after{
+		    content: "";
+		    position: absolute;
+		    display: inline-block;
+		    top: 0;
+		    left: 50%;
+		    margin-left: -50%;
+		    width: 100%;
+		    height: 62px;
+		    border-bottom: 2px solid white;
+		    transform: scaleX(0);
+		}
+		.header .header-prv:hover::after{
+		    transform: scale(1);
+		    transition: all 0.5s;
+		}
+		.header-next{
+		    position: relative;
+		    height: 62px;
+		}
+		.header-next>ul>li{
+		    position: relative;
+		    z-index: 3;
+		    display: block;
+		    height: 41px;
+		    font-size: 14px;
+		    line-height: 41px;
+		    background-color: black;
+		    border-bottom: 1px solid grey;
+		}
+		.header-next>ul>li:hover{
+		    color: #0f97ff;
+		}
+		.header-next ul{
+		    display: block;
+		    position: relative;
+		    top: -30%;
+		    z-index: 3;
+		    background-color: black;
+		    opacity: 0;
+		}
+		.header-next ul::after{
+		    content: "";
+		    position: absolute;
+		    display: block;
+		    z-index: 1;
+		    left: 50%;
+		    margin-left: -50px;
+		    top: 0;
+		    width: 100px;
+		    height: 100%;
+		    background-color: black;
+		}
+		.header-next:hover.header-next ul{
+		    opacity: 1;
+		    top: 0;
+		    transition: all 0.5s;
+		}
+		/*main*/
+		main{
+		    height: 990px;
+		}
+		.main-body{
+		    width: 1200px;
+		    margin: 0 auto;
+		}
+		.main-body>h3{
+		    margin-top: 60px;
+		    font-size: 24px;
+		}
+		.main-body>p{
+		    margin-top: 30px;
+		    font-size: 16px;
+		    text-indent: 2em;
+		    line-height: 1.8;
+		}
+		/*footer*/
+		footer{
+		    height: 308px;
+		    background-color: black;
+		}
+		.footer-body{
+		    margin: 0 auto;
+		    width: 1200px;
+		    height: 308px;
+		    padding-top: 36px;
+		}
+		.footer-head{
+		    width: 100%;
+		    height: 58px;
+		    border-bottom: 1px solid #333333;
+		}
+		.footer-head>li{
+		    display: inline-block;
+		    float: left;
+		    width: 92px;
+		    height: 41px;
+		    color: white;
+		    line-height: 41px;
+		}
+		.footer-head>.footer-head-icon{
+		    display: inline-block;
+		    float: right;
+		    margin-right: 20px;
+		    margin-top: 12px;
+		    width: 21px;
+		    height: 17px;
+		}
+		.footer-information{
+		    width: 100%;
+		    height: 87px;
+		    margin-bottom: 26px;
+		    padding-top: 24px;
+		}
+		.footer-information>p{
+		    height: 21px;
+		    font-size: 12px;
+		    color: #ffffff;
+		}
+		.footer-information>p>a{
+		    font-size: 12px;
+		    color: #ffffff;
+		}
+		.footer-information>p>a:hover{
+		    border-bottom: 1px solid white;
+		}
+		.footer-last{
+		    width: 1200px;
+		    height: 36px;
+		
+		}
+		.footer-last li{
+		    display: inline-block;
+		    float: left;
+		    width: 148px;
+		    height: 36px;
+		    margin-left: 5%;
+		    color: white;
+		    border-right: 1px solid white;
+		    font-size: 12px;
+		}
+		li>a{
+		    color: white;
+		}
+		.footer-last :last-child{
+		    border-right: 0;
+		}
+		.footer-last :first-child{
+		    margin: 0;
+		}
+		.icon{
+		    display: inline-block;
+		    float: left;
+		    color: white;
+		    width: 40px;
+		    height: 38px;
+		}
+		.icon1{
+		    background: url(https://www.xunlei.com/v2018/dist/spr_common.png?h=26ef6d) no-repeat 0 -177px;
+		}
+		.icon2{
+		    background: url(https://www.xunlei.com/v2018/dist/spr_common.png?h=26ef6d) no-repeat -45px -177px;
+		}
+		.icon3{
+		    background: url(https://www.xunlei.com/v2018/dist/spr_common.png?h=26ef6d) no-repeat -90px -177px;
+		}
+		.icon4{
+		    background: url(https://www.xunlei.com/v2018/dist/spr_common.png?h=26ef6d) no-repeat -135px -177px;
+		}
+		.icon5{
+		    background: url(https://www.xunlei.com/v2018/dist/spr_common.png?h=26ef6d) no-repeat -180px -177px;
+		}
+		.fot{
+			margin-top: 20px;
+		}
+		/*footer*/
+		
+	</style>
+</head>
+<body>
+<header>
+    <div class="change">
+    <ul class="header">
+        <li class="icon"><img src="./img/xl-logo2x.png" alt=""></li>
+        <li class="header-prv">投资者关系</li>
+        <li class="header-prv header-next">关于我们
+            <ul>
+                <li>公司简介</li>
+                <li>企业价值观</li>
+                <li>发展历程</li>
+                <li>公司荣誉</li>
+                <li>管理团队</li>
+                <li>新闻中心</li>
+                <li>联系我们</li>
+            </ul>
+        </li>
+        <li class="header-prv">开放能力</li>
+        <li class="header-prv">广告服务</li>
+        <li class="header-prv header-next">区块链
+            <ul>
+                <li> 玩客云</li>
+                <li>迅雷链</li>
+                <li>星域云</li>
+            </ul>
+        </li>
+        <li class="header-prv">产品中心</li>
+        <li class="header-prv">首页</li>
+    </ul>
+    </div>
+    <h1>关于迅雷</h1>
+</header>
+<main>
+    <div class="main-body">
+        <h3>公司简介</h3>
+        <p>深圳市迅雷网络技术有限公司（纳斯达克股票代码：XNET）成立于2003年，是全球领先的共享计算与区块链技术创新企业，同时也是中国用户数领先，历史悠久的互联网品牌之一。</p>
+        <p>迅雷基于深耕十几年、获得国际专利的P2SP下载加速技术优势，面向个人用户和企业用户打造了丰富的下载加速、区块链、云计算、影音娱乐等产品及服务，为广大用户创造了高效、智能、安全的互联网体验。</p>
+        <p>作为中国领先的数据传输服务提供商，迅雷目前已拥有迅雷下载、迅雷影音、迅雷直播、迅雷快鸟、迅雷会员等个人消费级服务，分布于下载加速、网络加速、游戏加速、上行加速等领域，形成了技术领先的云加速产品矩阵。在此基础上，迅雷创建了超过63亿的数字多媒体文件索引，通过资源优势和技术优势实现了内容加速的智能优化，不断为用户创造超出期待的数据传输体验。</p>
+        <p>此外，迅雷把P2SP技术应用于云计算和区块链领域，大力投入基础研究和原始技术创新，拥有了具备高度原创性且世界领先的核心技术。</p>
+        <p>迅雷旗下网心科技独创了共享计算模式，通过共享经济智能硬件赚钱宝及玩客云，筹集用户家中闲置的计算、存储、带宽资源，把千家万户连接成一张云计算网络，为企业提供优质低成本的云计算服务。其中，玩客云是中国畅销的智能硬件产品之一，受到超过3500万玩客的喜爱和认可。共享计算产品星域云已建立了包括150万+家庭节点，30Tb/s+储备带宽，1500PB+存储空间的大规模云计算网络，为小米、爱奇艺、快手等众多企业提供了领先的技术服务，并成功引领了行业技术进步与服务升级。</p>
+        <p>在共享计算的基础上，网心科技打造的超级区块链平台迅雷链，具备全球领先的百万TPS高并发、秒级确认的领先性能，大幅提升了区块链技术的性能水准。迅雷链是全球领先的ToC区块链商业生态，赋能实体经济，致力于成为ToC现象级区块链应用的摇篮。2018年5月，美国《福布斯》商业杂志网站发布“中国的区块链已经实现突破性领先”一文，高度评价迅雷，认为以迅雷为代表的中国区块链企业在全球已处于领先地位。</p>
+        <p>迅雷一直致力于以技术创新推动社会发展，用优质的产品和服务提升全人类的数字生活品质，获得了广大用户的喜爱和认可。未来，迅雷将在共享计算和区块链的技术优势基础上不断开拓创新，为世界互联网的发展提供驱动力。</p>
+        <h3 class="about-intro__tit">企业愿景</h3>
+        <p>用科技创新，放大每个人的力量。<br></p>
+    </div>
+</main>
+<footer>
+    <div class="footer-body">
+        <ul class="footer-head">
+            <li>产品中心</li>
+            <li>关于我们</li>
+            <li>联系我们</li>
+            <li>迅雷招聘</li>
+            <li>客服中心</li>
+            <li>迅雷论坛</li>
+            <li class="footer-head-icon wechat-father" style="background:url(img/spr_common.png) no-repeat -225px -175px ;"><div class="wechat"></div></li>
+            <li class="footer-head-icon" style="background:url(img/spr_common.png) no-repeat -195px -141px ;"></li>
+        </ul>
+        <div class="footer-information">
+            <p><a href="">增值电信业务粤B2-20050219号</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                    href="img/zzdx.jpg"粤ICP备:B2-20050219号</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                    href="img/zzdx.jpg">粤网文[2016]0901-125号</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                    href="img/zzdx.jpg">互联网药品证书</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                    href="img/zzdx.jpg">互联网出版(粤)字053号</a></p>
+            <p>客服电话 400-1111-000&nbsp;&nbsp;|&nbsp;&nbsp;违规不良信息举报电话 0755-86319951&nbsp;&nbsp;|&nbsp;&nbsp;举报邮箱 <a href="img/zzdx.jpg">xljubao@xunlei.com</a></p>
+            <p><a href="img/zzdx.jpg">用户协议</a><a href="img/zzdx.jpg">隐私协议</a>&nbsp;|&nbsp;&nbsp;Copyright © 2003-2020 XUNLEI.COM All Rights Reserved</p>
+        </div>
+        <div class="footer-last">
+            <ul class="fot">
+                <li><a href="https://szcert.ebs.org.cn/a8374448-a3eb-46c5-bf4c-b4e1b2189db4">
+                    <i class="icon icon1"></i>
+                    工商网监<br>
+                    电子标识
+                </a></li>
+                <li><a href="https://szcert.ebs.org.cn/a8374448-a3eb-46c5-bf4c-b4e1b2189db4">
+                    <i class="icon icon2"></i>
+                    工商网监<br>
+                    电子标识
+                </a></li>
+                <li><a href="https://szcert.ebs.org.cn/a8374448-a3eb-46c5-bf4c-b4e1b2189db4">
+                    <i class="icon icon3"></i>
+                    工商网监<br>
+                    电子标识
+                </a></li>
+                <li><a href="https://szcert.ebs.org.cn/a8374448-a3eb-46c5-bf4c-b4e1b2189db4">
+                    <i class="icon icon4"></i>
+                    工商网监<br>
+                    电子标识
+                </a></li>
+                <li><a href="https://szcert.ebs.org.cn/a8374448-a3eb-46c5-bf4c-b4e1b2189db4">
+                    <i class="icon icon5"></i>
+                    工商网监<br>
+                    电子标识
+                </a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
